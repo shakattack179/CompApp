@@ -1,0 +1,15 @@
+.container-fluid
+  .row
+    .col-md-12
+      br
+      h1.text-center And the winners are:
+      br
+  .row
+    - @results.each do |group, winners|
+      .col-md-4
+        .card
+          .card-body.text-center
+            h3 = group
+            - winners.each_with_index do |winner, index|
+              p = "#{index + 1}. #{winner[winner.keys.first]}"
+        br

@@ -1,0 +1,17 @@
+.container
+  .row
+    .col-md-2
+    .col-md-8
+      br
+      br
+      .card
+        .card-body
+          = form_tag({action: :finalize}) do
+            .form-group
+              label How many winners per a group should there be?
+              = select_tag(:number_of_winners, options_for_select([1,2,3].map{|win_num| [win_num, win_num]}), class: 'form-control')
+            .form-group
+              label How should the winners be grouped?
+              = select_tag(:group_winners_by, options_for_select(@group_by_options.map{|gbo| [gbo, gbo]}), class: 'form-control')
+            = submit_tag "Draw winners", class: 'btn btn-success btn-lg btn-block'
+    .col-md-2
