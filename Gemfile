@@ -28,6 +28,8 @@ gem 'jbuilder', '~> 2.5'
 gem 'slim'
 gem 'pry'
 gem 'roo'
+gem 'jquery'
+gem 'jquery-ui-rails'
 # Use Redis adapter to run Action Cable in production
 # gem 'redis', '~> 4.0'
 # Use ActiveModel has_secure_password
