@@ -14,10 +14,14 @@
  *= require jquery-ui
  *= require_self
  */
+
+@import url('https://fonts.googleapis.com/css?family=Inconsolata');
+
 html, body{
   margin: 0;
   padding:0;
   height: 100%;
+  font-family: 'Inconsolata' !important;
 }
 
 h3 {
