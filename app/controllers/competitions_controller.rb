@@ -23,9 +23,16 @@ class CompetitionsController < ApplicationController
     Rails.cache.write("rows", rows)
   end
 
-  def finalize
+  def prepare_draw
     number_of_winners = params[:number_of_winners]
     group_winners_by = params[:group_winners_by]
+    Rails.cache.write("number_of_winners", number_of_winners)
+    Rails.cache.write("group_winners_by", group_winners_by)
+  end
+
+  def perform_draw
+    number_of_winners = Rails.cache.read("number_of_winners")
+    group_winners_by = Rails.cache.read("group_winners_by")
     rows = Rails.cache.read("rows")
     @results = {}
     rows.group_by{|row| row[group_winners_by] }.map do |group, winners|

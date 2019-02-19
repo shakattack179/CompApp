@@ -6,7 +6,7 @@
       br
       .card
         .card-body
-          = form_tag({action: :finalize}) do
+          = form_tag({action: :prepare_draw}) do
             .form-group
               label How many winners per a group should there be?
               = hidden_field_tag :authenticity_token, form_authenticity_token
@@ -14,5 +14,5 @@
             .form-group
               label How should the winners be grouped?
               = select_tag(:group_winners_by, options_for_select(@group_by_options.map{|gbo| [gbo, gbo]}), class: 'form-control')
-            = submit_tag "Draw winners", class: 'btn btn-success btn-lg btn-block'
+            = submit_tag "Prepare Draw", class: 'btn btn-success btn-lg btn-block'
     .col-md-2
