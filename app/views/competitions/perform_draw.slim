@@ -5,6 +5,8 @@
       - @results.to_a[0][1].each_with_index do |winner, index|
         div class="hidden hidden-0-#{index}" = "#{winner[winner.keys.first]}"
         div class="js-odoo-0-#{index}"
+      = image_tag "ifa.jpg", style: "width: 8rem"
+      = image_tag "bgs_badge_bw.jpg", style: "width: 8rem"
   - count = 1
   - @results.to_a[1..-1].each do |group, winners|
     .slides
@@ -13,6 +15,8 @@
         - winners.each_with_index do |winner, index|
           div class="hidden hidden-#{count}-#{index}" = "#{winner[winner.keys.first]}"
           div class="js-odoo-#{count}-#{index}"
+        = image_tag "ifa.jpg", style: "width: 8rem"
+        = image_tag "bgs_badge_bw.jpg", style: "width: 8rem"
     - count += 1
 
 javascript:
@@ -27,6 +31,14 @@ javascript:
     if ($(".hidden-0-2").length > 0) {
       let value3 = $(".hidden-0-2")[0].innerHTML
       odoo.default({ el:'.js-odoo-0-2', from: '', to: value3.replace(/[^\w\s]/gi, ' ').toUpperCase(), animationDelay: 100 });
+    }
+    if ($(".hidden-0-3").length > 0) {
+      let value3 = $(".hidden-0-3")[0].innerHTML
+      odoo.default({ el:'.js-odoo-0-3', from: '', to: value3.replace(/[^\w\s]/gi, ' ').toUpperCase(), animationDelay: 100 });
+    }
+    if ($(".hidden-0-4").length > 0) {
+      let value3 = $(".hidden-0-4")[0].innerHTML
+      odoo.default({ el:'.js-odoo-0-4', from: '', to: value3.replace(/[^\w\s]/gi, ' ').toUpperCase(), animationDelay: 100 });
     }
   })
 
@@ -49,6 +61,16 @@ javascript:
         odoo.default({ el:'.js-odoo-'+index+'-1', from: '', to: value2.replace(/[^\w\s]/gi, ' ').toUpperCase(), animationDelay: 100 });
       }
       if ($(".hidden-0-2").length > 0) {
+        let value3 = $(".hidden-"+index+"-2")[0].innerHTML
+        odoo.default({ el:'.js-odoo-'+index+'-2', from: '', to: value3.replace(/[^\w\s]/gi, ' ').toUpperCase(), animationDelay: 100 });
+      }
+
+      if ($(".hidden-0-3").length > 0) {
+        let value3 = $(".hidden-"+index+"-2")[0].innerHTML
+        odoo.default({ el:'.js-odoo-'+index+'-2', from: '', to: value3.replace(/[^\w\s]/gi, ' ').toUpperCase(), animationDelay: 100 });
+      }
+
+      if ($(".hidden-0-4").length > 0) {
         let value3 = $(".hidden-"+index+"-2")[0].innerHTML
         odoo.default({ el:'.js-odoo-'+index+'-2', from: '', to: value3.replace(/[^\w\s]/gi, ' ').toUpperCase(), animationDelay: 100 });
       }
